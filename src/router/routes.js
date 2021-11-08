@@ -7,19 +7,31 @@ import Err404 from '@views/error/404.vue';
 const routes = [
   {
     path: '/',
-    component: Home
+    component: Home,
+    meta: {
+      requireAuth: true
+    }
   },
   {
     path: '/login',
-    component: Login
+    component: Login,
+    meta: {
+      requireAuth: false
+    }
   },
   {
     path: '/error',
-    component: Err
+    component: Err,
+    meta: {
+      requireAuth: false
+    }
   },
   {
     path: '/404',
-    component: Err404
+    component: Err404,
+    meta: {
+      requireAuth: false
+    }
   },
   {
     path: '/:pathMatch(.*)',
