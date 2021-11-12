@@ -39,7 +39,7 @@ const vantLocales = (lang) => {
   } else if (lang === 'zh') {
     Locale.use(lang, zhCN);
   }
-}
+};
 
 vantLocales(getLocale());
 

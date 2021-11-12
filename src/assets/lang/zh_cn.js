@@ -9,7 +9,7 @@ const menu = {
 
 export default {
   app: {
-    ...globalText,
-    ...menu,
+    globalText,
+    menu,
   },
 };

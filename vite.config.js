@@ -8,6 +8,13 @@ const path = require('path')
 // https://vitejs.dev/config/
 export default ((mode) => {
   return defineConfig({
+    css: {
+      preprocessorOptions: {
+        less: {
+          javascriptEnabled: true
+        }
+      }
+    },
     plugins: [
       vue(),
       styleImport({
@@ -54,13 +61,13 @@ export default ((mode) => {
     server: {
       open: true,
       // https: true,
-      // proxy: {
-      //   '/api': {
-      //     target: '',
-      //     changeOrigin: true,
-      //     rewrite: (path) => path.replace(/^\/api/, '')
-      //   }
-      // },
+      proxy: {
+        '/api': {
+          target: 'https://www.fastmock.site/mock/665fb89a1b706542f160498c5da0e134',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, '')
+        }
+      },
     },
     resolve: {
       alias: {
@@ -70,7 +77,10 @@ export default ((mode) => {
         '@views': path.resolve(__dirname, './src/views'),
         '@components': path.resolve(__dirname, './src/components'),
         '@locale': path.resolve(__dirname, './src/locale'),
-        '@router': path.resolve(__dirname, './src/router')
+        '@router': path.resolve(__dirname, './src/router'),
+        '@store': path.resolve(__dirname, './src/store'),
+        '@http': path.resolve(__dirname, './src/http'),
+        '@service': path.resolve(__dirname, './src/service')
       }
     }
   })

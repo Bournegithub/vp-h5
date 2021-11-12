@@ -1,23 +1,31 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-// import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <!-- <img alt="Vue logo" src="./assets/images/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
-  <van-button type="primary">{{ $t('app.welcome') }}</van-button> -->
   <router-view />
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<script>
+import { onMounted } from 'vue';
+import { globalApi } from '@service';
+
+export default {
+  setup() {
+    const login = () => {
+      const params = {
+        user: '11111',
+        pwd: '123456',
+      };
+      globalApi.login(params).then((res) => {
+        console.log('login-res', res);
+      }).catch(() => {
+
+      }).finally(() => {});
+    };
+    onMounted(login);
+    return {
+      login,
+    };
+  },
 }
+</script>
+
+<style>
 </style>

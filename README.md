@@ -10,12 +10,13 @@ h5项目的一个起手模板，方便迅速开发。UI框架使用Vant。
   npm install -g v-project-cli <br/>
   安装完成后使用 vp init my-project命令 选择h5拉取代码<br/>
 
-  路由 <br/>
+  axios <br/>
+  路由 ok<br/>
   权限 <br/>
-  rem <br/>
+  rem ok<br/>
   国际化 ok <br/>
-  iconfont <br/>
-  store <br/>
+  iconfont ok <br/>
+  store ok<br/>
 
 ### 目录
 * http

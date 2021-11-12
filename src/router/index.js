@@ -1,18 +1,18 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import routes from './routes'
+import { createRouter, createWebHistory } from 'vue-router';
+import routes from './routes';
 
-const routerHistory = createWebHistory()
+const routerHistory = createWebHistory();
 const router = createRouter({
   history: routerHistory,
-  routes: routes
-})
+  routes: routes,
+});
 const isLogin = false;
 router.beforeEach((to, from, next) => {
   if (to.meta.requireAuth && !isLogin) {
-    next('/login')
+    next('/login');
   } else {
-    next()
+    next();
   }
-})
+});
 
-export default router
+export default router;
