@@ -1,12 +1,12 @@
 <template>
-  <div>
-    home
-    {{ $t('app.globalText.welcome') }}
-    <van-grid clickable :column-num="2">
-      <van-grid-item icon="home-o" text="示例" to="/example" />
-      <van-grid-item icon="search" text="URL 跳转" url="https://github.com" />
-    </van-grid>
-    <van-icon name="chat-o" />
+  <div class="home-page">
+    <div class="home-wrap">
+      <div class="home-content">
+        首页
+        {{ $t('app.globalText.welcome') }}
+      </div>
+    </div>
+    <!-- <van-icon name="chat-o" />
     <van-icon
         class='iconfont'
         class-prefix='icon'
@@ -14,6 +14,35 @@
       />
     <van-button round block type="primary" native-type="submit">
       提交
-    </van-button>
+    </van-button> -->
+    <BottomBar />
   </div>
 </template>
+
+<script>
+import BottomBar from '@components/BottomBar.vue';
+
+export default {
+  setup() {
+    
+  },
+  components: {
+    BottomBar,
+  },
+}
+</script>
+
+<style lang="less" scoped>
+  .home-page {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .home-wrap {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+</style>
