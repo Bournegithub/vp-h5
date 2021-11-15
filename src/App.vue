@@ -4,6 +4,7 @@
 
 <script>
 import { onMounted } from 'vue';
+import Cookies from 'js-cookie';
 import { globalApi } from '@service';
 
 export default {
@@ -14,7 +15,9 @@ export default {
         pwd: '123456',
       };
       globalApi.login(params).then((res) => {
-        console.log('login-res', res);
+        if (res) {
+          Cookies.set('token', res.token);
+        }
       }).catch(() => {
 
       }).finally(() => {});

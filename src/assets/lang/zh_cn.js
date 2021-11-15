@@ -9,6 +9,7 @@ const menu = {
   example: '示例',
   iconfont: '图标字体',
   store: '状态仓库',
+  language: '语言切换',
 };
 
 export default {

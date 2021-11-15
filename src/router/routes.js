@@ -5,6 +5,7 @@ import Err404 from '@views/error/404.vue';
 import Example from '@views/example/index.vue';
 import IconFont from '@views/example/iconfont.vue';
 import Store from '@views/example/store.vue';
+import Language from '@views/example/language.vue';
 
 const routes = [
   {
@@ -27,17 +28,25 @@ const routes = [
         path: 'iconfont',
         name: 'iconfont',
         component: IconFont,
-        // meta: {
-        //   requireAuth: false,
-        // },
+        meta: {
+          requireAuth: false,
+        },
       },
       {
         path: 'store',
         name: 'store',
         component: Store,
-        // meta: {
-        //   requireAuth: false,
-        // },
+        meta: {
+          requireAuth: false,
+        },
+      },
+      {
+        path: 'language',
+        name: 'language',
+        component: Language,
+        meta: {
+          requireAuth: false,
+        },
       },
     ],
   },

@@ -17,6 +17,13 @@
         size="large"
         to="/example/store"
       />
+      <van-cell
+        title="语言使用示例"
+        value="查看"
+        is-link
+        size="large"
+        to="/example/language"
+      />
     </van-cell-group>
     <router-view></router-view>
     <BottomBar />
@@ -32,13 +39,8 @@ export default {
   setup() {
     const route = useRoute();
     const path = computed(() =>route.path);
-    // const navTitle = path.value;
-    // const parentComponentsShow = computed(() => navTitle === '/example' ? true : false);
-    // console.log('当前路由path', navTitle);
     return {
       path,
-      // navTitle,
-      // parentComponentsShow,
     };
   },
   components: {

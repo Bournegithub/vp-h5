@@ -9,6 +9,7 @@ const menu = {
   example: 'example',
   iconfont: 'iconfont',
   store: 'store',
+  language: 'language',
 };
 
 export default {

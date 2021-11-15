@@ -1,6 +1,5 @@
 <template>
   <div class="bottom-bar">
-    {{ currentPath }} / {{ ax }}
     <van-grid clickable :column-num="2">
       <van-grid-item
         v-for="(item, index) in routes"
@@ -8,6 +7,7 @@
         :icon="item.icon"
         :text="$t(`app.menu.${item.name}`)"
         :to="item.path"
+        :class="activeClass(item.path)"
       />
     </van-grid>
   </div>
@@ -32,18 +32,23 @@ export default {
       },
     ];
     const route = useRoute();
-    const currentPath = ref(JSON.parse(JSON.stringify(computed(() =>route.path))));
-    const active = computed((path) => {
-      let result = '';
-      console.log('path', path);
-      if (currentPath.includes(path)) {
-        result = 'active';
+    const currentPath = computed(() =>route.path).value;
+    const activeClass = computed(() => {
+      return (path) => {
+        let result = '';
+        if (path === '/') {
+          if (currentPath === path) {
+            result = 'active';
+          }
+        } else if (currentPath.includes(path)){
+          result = 'active';
+        }
+        return result;
       }
-      return result;
     });
     return {
       routes,
-      active,
+      activeClass,
       currentPath,
     }
   },
@@ -55,5 +60,15 @@ export default {
     width: 100%;
     position: absolute;
     bottom: 0;
+    /deep/.van-grid {
+      .van-grid-item {
+        &.active {
+          color: #1989FA;
+          .van-grid-item__text {
+            color: #1989FA;
+          }
+        }
+      }
+    }
   }
 </style>

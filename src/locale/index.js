@@ -1,10 +1,13 @@
 import { createI18n } from 'vue-i18n';
 import { Locale } from 'vant';
-import { getLanguage } from '@utils/cookie';
+import { getLanguage, setLanguage } from '@utils/cookie';
 import enUS from 'vant/lib/locale/lang/en-US';
 import zhCN from 'vant/lib/locale/lang/zh-CN';
 import enLocale from '@assets/lang/en_us.js';
 import zhLocale from '@assets/lang/zh_cn.js';
+
+// 设置默认语言
+setLanguage('zh');
 
 const messages = {
   en: {
@@ -16,7 +19,6 @@ const messages = {
     ...zhLocale,
   },
 };
-
 export const getLocale = () => {
   const cookieLanguage = getLanguage();
   if (cookieLanguage) {
@@ -24,16 +26,18 @@ export const getLocale = () => {
   }
   const language = navigator.language.toLowerCase();
   const locales = Object.keys(messages);
-  for (const locale of locales) {
-    if (language.indexOf(locale) > -1) {
-      return locale;
+  locales.forEach((item) => {
+    if (item.includes(language)) {
+      setLanguage(item);
+      return item;
     }
-  }
-  return 'zh';
+    setLanguage('zh');
+    return 'zh';
+  });
 };
 
 // 更新vant组件库本身的语言变化，支持国际化
-const vantLocales = (lang) => {
+export const vantLocales = (lang) => {
   if (lang === 'en') {
     Locale.use(lang, enUS);
   } else if (lang === 'zh') {

@@ -39,8 +39,7 @@ service.interceptors.request.use((config) => {
 
 // 3.响应拦截器
 service.interceptors.response.use((response) => {
-  console.log('request-response', response);
-  // console.log('request-response.data', response.data);
+  // console.log('request-response', response);
   let result = null;
   if (response.status === 200) {
     if (response.data.code !== 200) {
