@@ -5,10 +5,10 @@ const filterThousandth = function () {
   return (val) => {
     return thousandth(val);
   }
-}
+};
+
 const filters = {
   filterThousandth,
 };
 
 export default filters;
-

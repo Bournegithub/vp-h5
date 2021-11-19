@@ -4,8 +4,8 @@ import App from './App.vue';
 import router from '@router/index';
 import store from '@store/index';
 import vantImport from '@utils/vantImport';
-import i18n from '@locale/index.js';
-import globalMixin from './common/mixins/global-mixin';
+import i18n from '@locale/index';
+import globalMixin from './common/mixins';
 import '@utils/rem';
 import '@assets/style/iconfont.css'; // 引入图标字体
 import '@assets/style/main.less';

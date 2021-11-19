@@ -60,17 +60,17 @@ const routes = [
         },
       },
       {
-        path: 'imitateFilter',
-        name: 'imitateFilter',
-        component: ImitateFilter,
+        path: 'mixin',
+        name: 'mixin',
+        component: Mixin,
         meta: {
           requireAuth: false,
         },
       },
       {
-        path: 'mixin',
-        name: 'mixin',
-        component: Mixin,
+        path: 'imitateFilter',
+        name: 'imitateFilter',
+        component: ImitateFilter,
         meta: {
           requireAuth: false,
         },
