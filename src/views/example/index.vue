@@ -24,6 +24,27 @@
         size="large"
         to="/example/language"
       />
+      <van-cell
+        title="chart使用示例"
+        value="查看"
+        is-link
+        size="large"
+        to="/example/charts"
+      />
+      <van-cell
+        title="模拟过滤器使用示例"
+        value="查看"
+        is-link
+        size="large"
+        to="/example/imitateFilter"
+      />
+      <van-cell
+        title="全局mixin使用示例"
+        value="查看"
+        is-link
+        size="large"
+        to="/example/mixin"
+      />
     </van-cell-group>
     <router-view></router-view>
     <BottomBar />

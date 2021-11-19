@@ -73,7 +73,10 @@ export default ((mode) => {
       alias: {
         '@': path.resolve(__dirname, './src'),
         '@assets': path.resolve(__dirname, './src/assets'),
-        '@utils': path.resolve(__dirname, './src/utils'),
+        '@common': path.resolve(__dirname, './src/common'),
+        '@mixins': path.resolve(__dirname, './src/common/mixins'),
+        '@filter': path.resolve(__dirname, './src/common/filter'),
+        '@utils': path.resolve(__dirname, './src/common/utils'),
         '@views': path.resolve(__dirname, './src/views'),
         '@components': path.resolve(__dirname, './src/components'),
         '@locale': path.resolve(__dirname, './src/locale'),

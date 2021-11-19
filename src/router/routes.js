@@ -6,6 +6,9 @@ import Example from '@views/example/index.vue';
 import IconFont from '@views/example/iconfont.vue';
 import Store from '@views/example/store.vue';
 import Language from '@views/example/language.vue';
+import Charts from '@views/example/charts.vue';
+import ImitateFilter from '@views/example/imitate-filter.vue';
+import Mixin from '@views/example/mixin.vue';
 
 const routes = [
   {
@@ -44,6 +47,30 @@ const routes = [
         path: 'language',
         name: 'language',
         component: Language,
+        meta: {
+          requireAuth: false,
+        },
+      },
+      {
+        path: 'charts',
+        name: 'charts',
+        component: Charts,
+        meta: {
+          requireAuth: false,
+        },
+      },
+      {
+        path: 'imitateFilter',
+        name: 'imitateFilter',
+        component: ImitateFilter,
+        meta: {
+          requireAuth: false,
+        },
+      },
+      {
+        path: 'mixin',
+        name: 'mixin',
+        component: Mixin,
         meta: {
           requireAuth: false,
         },

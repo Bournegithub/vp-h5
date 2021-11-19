@@ -5,11 +5,14 @@ const globalText = {
 };
 
 const menu = {
-  home: 'home',
-  example: 'example',
-  iconfont: 'iconfont',
-  store: 'store',
-  language: 'language',
+  home: 'Home',
+  example: 'Example',
+  iconfont: 'Iconfont',
+  store: 'Store',
+  language: 'Language',
+  charts: 'Charts',
+  imitateFilter: 'Imitate filter',
+  mixin: 'Mixin',
 };
 
 export default {
