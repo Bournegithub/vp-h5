@@ -2,7 +2,7 @@
   <div class="example-filter-page">
     <NavBar />
     <div class="filter-content">
-      <div>原数据: {{ filterThousandth(654321.123456) }}</div>
+      <div>原数据: {{ 654321.123456 }}</div>
       <div>filterThousandth(654321.123456): {{ filterThousandth(654321.123456) }}</div>
     </div>
   </div>

@@ -9,6 +9,7 @@ import Language from '@views/example/language.vue';
 import Charts from '@views/example/charts.vue';
 import ImitateFilter from '@views/example/imitate-filter.vue';
 import Mixin from '@views/example/mixin.vue';
+import Table from '@views/example/table.vue';
 
 const routes = [
   {
@@ -71,6 +72,14 @@ const routes = [
         path: 'imitateFilter',
         name: 'imitateFilter',
         component: ImitateFilter,
+        meta: {
+          requireAuth: false,
+        },
+      },
+      {
+        path: 'table',
+        name: 'table',
+        component: Table,
         meta: {
           requireAuth: false,
         },

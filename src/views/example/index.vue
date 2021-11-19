@@ -45,6 +45,13 @@
         size="large"
         to="/example/imitateFilter"
       />
+      <van-cell
+        title="表格使用示例"
+        value="查看"
+        is-link
+        size="large"
+        to="/example/table"
+      />
     </van-cell-group>
     <router-view></router-view>
     <BottomBar />

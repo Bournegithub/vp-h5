@@ -13,6 +13,7 @@ const menu = {
   charts: 'Charts',
   imitateFilter: 'Imitate filter',
   mixin: 'Mixin',
+  tabel: 'Table',
 };
 
 export default {
