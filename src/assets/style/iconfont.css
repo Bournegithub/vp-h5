@@ -13,6 +13,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-cc-arrow-down:before {
+  content: "\e606";
+}
+
+.icon-cc-arrow-up:before {
+  content: "\e60f";
+}
+
+.icon-narrow:before {
+  content: "\e711";
+}
+
+.icon-arrow_right_arrow_left:before {
+  content: "\e60e";
+}
+
+.icon-arrow_up_arrow_down:before {
+  content: "\e612";
+}
+
 .icon-adjust:before {
   content: "\e666";
 }
@@ -20,4 +40,3 @@
 .icon-discount:before {
   content: "\e675";
 }
-
