@@ -16,9 +16,18 @@ const menu = {
   table: '表格',
 };
 
+const columns = {
+  area: '地区',
+  age: '年龄',
+  sex: '性别',
+  name: '姓名',
+  example: '首尾列固定',
+};
+
 export default {
   app: {
     globalText,
     menu,
+    columns,
   },
 };

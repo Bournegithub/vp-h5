@@ -46,7 +46,7 @@ service.interceptors.response.use((response) => {
       Toast.fail(response.data.message);
       result = response.data;
     } else {
-      result = response.data.value || response.data.data;
+      result = response.data.data;
     }
   } else {
     Toast.fail(response.data.message);

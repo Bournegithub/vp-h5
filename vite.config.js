@@ -74,6 +74,7 @@ export default ((mode) => {
         '@': path.resolve(__dirname, './src'),
         '@assets': path.resolve(__dirname, './src/assets'),
         '@common': path.resolve(__dirname, './src/common'),
+        '@columns': path.resolve(__dirname, './src/common/columns'),
         '@mixins': path.resolve(__dirname, './src/common/mixins'),
         '@filter': path.resolve(__dirname, './src/common/filter'),
         '@utils': path.resolve(__dirname, './src/common/utils'),

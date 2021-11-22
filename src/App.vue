@@ -22,7 +22,9 @@ export default {
 
       }).finally(() => {});
     };
-    onMounted(login);
+    onMounted(() => {
+      login();
+    });
     return {
       login,
     };

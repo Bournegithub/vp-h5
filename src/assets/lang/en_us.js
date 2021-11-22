@@ -16,9 +16,18 @@ const menu = {
   table: 'Table',
 };
 
+const columns = {
+  area: 'Area',
+  age: 'Age',
+  sex: 'Sex',
+  name: 'Name',
+  example: 'Column fixed',
+};
+
 export default {
   app: {
     globalText,
     menu,
+    columns,
   },
 };

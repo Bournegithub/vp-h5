@@ -1,5 +1,17 @@
 import { createApp } from 'vue';
 import 'amfe-flexible/index.js';
+import ECharts from 'vue-echarts';
+import { use } from "echarts/core";
+import {
+  CanvasRenderer
+} from 'echarts/renderers';
+import {
+  BarChart
+} from 'echarts/charts';
+import {
+  GridComponent,
+  TooltipComponent
+} from 'echarts/components';
 import App from './App.vue';
 import router from '@router/index';
 import store from '@store/index';
@@ -10,7 +22,15 @@ import '@utils/rem';
 import '@assets/style/iconfont.css'; // 引入图标字体
 import '@assets/style/main.less';
 
+use([
+  CanvasRenderer,
+  BarChart,
+  GridComponent,
+  TooltipComponent
+])
+
 const app = createApp(App);
+app.component('v-chart', ECharts);
 app.config.globalProperties.$i18n = i18n; // i18n挂载到全局
 // console.log('app.config', app.config);
 app.use(i18n);

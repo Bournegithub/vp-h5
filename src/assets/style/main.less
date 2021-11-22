@@ -27,14 +27,24 @@
 // 字母间距
 @global-font-letter-spacing: 0;
 
+// 模块间隔
+@global-gap-default: 8px;
+@global-gap-min: 4px;
+@global-gap-middle: 12px;
+@global-gap-max: 16px;
+
 // 色彩
 
 // 全局样式
+* {
+  box-sizing: border-box;
+}
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
+  
 }
 body {
   font-family: @global-font-face-t1;
@@ -45,6 +55,12 @@ body {
   height: 100%;
   font-size: @global-font-size-normal;
   background: #F2F2F2;
+}
+
+.content-wrap {
+  padding: @global-gap-default;
+  width: 100%;
+  height: 100%;
 }
 
 // vant 模板样式覆盖(css覆盖)
