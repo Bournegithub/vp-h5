@@ -10,6 +10,7 @@ import Charts from '@views/example/charts.vue';
 import ImitateFilter from '@views/example/imitate-filter.vue';
 import Mixin from '@views/example/mixin.vue';
 import Table from '@views/example/table.vue';
+import Directive from '@views/example/directive.vue';
 
 const routes = [
   {
@@ -80,6 +81,14 @@ const routes = [
         path: 'table',
         name: 'table',
         component: Table,
+        meta: {
+          requireAuth: false,
+        },
+      },
+      {
+        path: 'directive',
+        name: 'directive',
+        component: Directive,
         meta: {
           requireAuth: false,
         },

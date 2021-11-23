@@ -52,6 +52,13 @@
         size="large"
         to="/example/table"
       />
+      <van-cell
+        title="自定义指令使用示例"
+        value="查看"
+        is-link
+        size="large"
+        to="/example/directive"
+      />
     </van-cell-group>
     <router-view></router-view>
     <BottomBar />

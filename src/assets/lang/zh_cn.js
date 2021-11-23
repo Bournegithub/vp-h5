@@ -14,6 +14,7 @@ const menu = {
   imitateFilter: '模拟filter',
   mixin: '混入',
   table: '表格',
+  directive: '自定义指令',
 };
 
 const columns = {

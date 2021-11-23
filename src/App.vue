@@ -3,12 +3,17 @@
 </template>
 
 <script>
-import { onMounted } from 'vue';
+import { onBeforeMount } from 'vue';
 import Cookies from 'js-cookie';
+import { useStore } from 'vuex';
 import { globalApi } from '@service';
 
 export default {
   setup() {
+    const store = useStore();
+    const setPermission = (val) => {
+      store.dispatch('actionPermission', val);
+    };
     const login = () => {
       const params = {
         user: '11111',
@@ -17,12 +22,13 @@ export default {
       globalApi.login(params).then((res) => {
         if (res) {
           Cookies.set('token', res.token);
+          setPermission(res.permission);
         }
       }).catch(() => {
 
       }).finally(() => {});
     };
-    onMounted(() => {
+    onBeforeMount(() => {
       login();
     });
     return {

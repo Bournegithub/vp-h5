@@ -14,6 +14,7 @@ const menu = {
   imitateFilter: 'Imitate filter',
   mixin: 'Mixin',
   table: 'Table',
+  directive: 'Directive',
 };
 
 const columns = {
