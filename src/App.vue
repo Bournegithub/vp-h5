@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { onBeforeMount } from 'vue';
+// import { onBeforeMount } from 'vue';
 import Cookies from 'js-cookie';
 import { useStore } from 'vuex';
 import { globalApi } from '@service';
@@ -28,9 +28,10 @@ export default {
 
       }).finally(() => {});
     };
-    onBeforeMount(() => {
-      login();
-    });
+    login();
+    // onBeforeMount(() => {
+    //   login();
+    // });
     return {
       login,
     };
