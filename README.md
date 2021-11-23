@@ -13,15 +13,15 @@ h5项目的一个起手模板，方便迅速开发。UI框架使用Vant。
 
   http ok<br/>
   路由 ok<br/>
-  权限 <br/>
+  权限 ok<br/>
   rem ok<br/>
   国际化 ok <br/>
   iconfont ok <br/>
   store ok<br/>
-  图表 (暂时使用vue-echarts) <br/>
+  图表 (暂时使用vue-echarts) ok<br/>
   filter ok(3.x过滤器被删除，不再受支持。官方建议用函数调用或计算属性替换它们，本模板内使用计算属性模拟全局filter)<br/>
   mixin ok<br/>
-  directives <br/>
+  directives ok<br/>
 
 ### 部分目录
 * http: axios请求拦截,响应拦截
@@ -31,6 +31,7 @@ h5项目的一个起手模板，方便迅速开发。UI框架使用Vant。
   * mixins: 全局混入对象
   * utils: 工具函数
   * columns: 存放表格固定表头
+  * directive: 自定义指令
 * local: 国际化
 
 ### 注意事项
