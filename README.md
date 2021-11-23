@@ -33,4 +33,5 @@ h5项目的一个起手模板，方便迅速开发。UI框架使用Vant。
 * local: 国际化
 
 ### 注意事项
-package.json锁定版本
+package.json锁定版本 <br/>
+less中无法正确计算calc的问题 解决方法：在表达式前添加"~" height: calc(~"100% - 50px");

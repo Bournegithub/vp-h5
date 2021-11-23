@@ -13,12 +13,22 @@ const menu = {
   charts: 'Charts',
   imitateFilter: 'Imitate filter',
   mixin: 'Mixin',
-  tabel: 'Table',
+  table: 'Table',
+  directive: 'Directive',
+};
+
+const columns = {
+  area: 'Area',
+  age: 'Age',
+  sex: 'Sex',
+  name: 'Name',
+  example: 'Column fixed',
 };
 
 export default {
   app: {
     globalText,
     menu,
+    columns,
   },
 };

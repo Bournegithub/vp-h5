@@ -4,8 +4,18 @@ import example from './example/index';
 const store = createStore({
   state () {
     return {
-      globalCount: 0,
+      permission: [],
     };
+  },
+  mutations: {
+    mutationPermission (state, value) {
+      state.permission = value;
+    },
+  },
+  actions: {
+    actionPermission (context, value) {
+      context.commit('mutationPermission', value);
+    },
   },
   modules: {
     example,
