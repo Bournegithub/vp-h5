@@ -10,7 +10,6 @@ const filterType = {
   filterThousandth: (val) => thousandth(val),
 };
 
-
 setTimeout(() => {
   permission = toRaw(store.state.permission);
   // console.log('directive-permission', permission);
