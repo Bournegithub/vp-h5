@@ -59,6 +59,13 @@
         size="large"
         to="/example/directive"
       />
+      <van-cell
+        title="接口返回401示例"
+        value="查看"
+        is-link
+        size="large"
+        to="/example/api401"
+      />
     </van-cell-group>
     <router-view></router-view>
     <BottomBar />

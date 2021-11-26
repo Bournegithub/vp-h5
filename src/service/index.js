@@ -6,4 +6,6 @@ export const globalApi = {
   getUserInfo: params => http.get(`/api/v1/getUserInfo`, params),
   // 登陆
   login: params => http.post(`/api/v1/login`, params),
+  // test404
+  testFail: params => http.get(`/api/v1/testFail`, params),
 };

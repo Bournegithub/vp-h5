@@ -15,6 +15,7 @@ const menu = {
   mixin: '混入',
   table: '表格',
   directive: '自定义指令',
+  api401: '接口返回401',
 };
 
 const columns = {
