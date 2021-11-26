@@ -1,5 +1,6 @@
-// const numeral = require('numeral');
-import numeral from 'numeral';
+// const numeral = require('numeral'); // require方式引入
+import numeral from 'numeral'; // import 引入
+// 文档地址:http://numeraljs.com/#settings
 
 // // 默认千分位及保留两位小数, 如有需要其他格式使用format()并带上参数
 numeral.defaultFormat('0,0.00');

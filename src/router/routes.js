@@ -11,6 +11,7 @@ import ImitateFilter from '@views/example/imitate-filter.vue';
 import Mixin from '@views/example/mixin.vue';
 import Table from '@views/example/table.vue';
 import Directive from '@views/example/directive.vue';
+import Api401 from '@views/example/api401.vue';
 
 const routes = [
   {
@@ -18,7 +19,7 @@ const routes = [
     name: 'home',
     component: Home,
     meta: {
-      requireAuth: false,
+      requireAuth: true,
     },
   },
   {
@@ -26,7 +27,7 @@ const routes = [
     name: 'example',
     component: Example,
     meta: {
-      requireAuth: false,
+      requireAuth: true,
     },
     children: [
       {
@@ -34,7 +35,7 @@ const routes = [
         name: 'iconfont',
         component: IconFont,
         meta: {
-          requireAuth: false,
+          requireAuth: true,
         },
       },
       {
@@ -42,7 +43,7 @@ const routes = [
         name: 'store',
         component: Store,
         meta: {
-          requireAuth: false,
+          requireAuth: true,
         },
       },
       {
@@ -50,7 +51,7 @@ const routes = [
         name: 'language',
         component: Language,
         meta: {
-          requireAuth: false,
+          requireAuth: true,
         },
       },
       {
@@ -58,7 +59,7 @@ const routes = [
         name: 'charts',
         component: Charts,
         meta: {
-          requireAuth: false,
+          requireAuth: true,
         },
       },
       {
@@ -66,7 +67,7 @@ const routes = [
         name: 'mixin',
         component: Mixin,
         meta: {
-          requireAuth: false,
+          requireAuth: true,
         },
       },
       {
@@ -74,7 +75,7 @@ const routes = [
         name: 'imitateFilter',
         component: ImitateFilter,
         meta: {
-          requireAuth: false,
+          requireAuth: true,
         },
       },
       {
@@ -82,7 +83,7 @@ const routes = [
         name: 'table',
         component: Table,
         meta: {
-          requireAuth: false,
+          requireAuth: true,
         },
       },
       {
@@ -90,7 +91,15 @@ const routes = [
         name: 'directive',
         component: Directive,
         meta: {
-          requireAuth: false,
+          requireAuth: true,
+        },
+      },
+      {
+        path: 'api401',
+        name: 'api401',
+        component: Api401,
+        meta: {
+          requireAuth: true,
         },
       },
     ],

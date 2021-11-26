@@ -15,6 +15,7 @@ const menu = {
   mixin: 'Mixin',
   table: 'Table',
   directive: 'Directive',
+  api401: 'API 401',
 };
 
 const columns = {
