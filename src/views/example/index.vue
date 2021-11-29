@@ -4,67 +4,13 @@
       v-show="path === '/example'"
     >
       <van-cell
-        title="iconfont使用示例"
+        v-for="(item, index) in exampleRoutes"
+        :key="index"
+        :title="`${item.name}使用示例`"
         value="查看"
         is-link
         size="large"
-        to="/example/iconfont"
-      />
-      <van-cell
-        title="store使用示例"
-        value="查看"
-        is-link
-        size="large"
-        to="/example/store"
-      />
-      <van-cell
-        title="语言使用示例"
-        value="查看"
-        is-link
-        size="large"
-        to="/example/language"
-      />
-      <van-cell
-        title="chart使用示例"
-        value="查看"
-        is-link
-        size="large"
-        to="/example/charts"
-      />
-      <van-cell
-        title="全局mixin使用示例"
-        value="查看"
-        is-link
-        size="large"
-        to="/example/mixin"
-      />
-      <van-cell
-        title="模拟过滤器使用示例"
-        value="查看"
-        is-link
-        size="large"
-        to="/example/imitateFilter"
-      />
-      <van-cell
-        title="表格使用示例"
-        value="查看"
-        is-link
-        size="large"
-        to="/example/table"
-      />
-      <van-cell
-        title="自定义指令使用示例"
-        value="查看"
-        is-link
-        size="large"
-        to="/example/directive"
-      />
-      <van-cell
-        title="接口返回401示例"
-        value="查看"
-        is-link
-        size="large"
-        to="/example/api401"
+        :to="`${path}/${item.path}`"
       />
     </van-cell-group>
     <router-view></router-view>
@@ -74,15 +20,24 @@
 
 <script>
 import { computed } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import BottomBar from '@components/BottomBar.vue';
 
 export default {
   setup() {
     const route = useRoute();
     const path = computed(() =>route.path);
+    const { options } = useRouter();
+    const routes = options.routes;
+    let exampleRoutes = [];
+    routes.forEach((item) => {
+      if (item.path === route.path) {
+        exampleRoutes = item.children;
+      }
+    });
     return {
       path,
+      exampleRoutes,
     };
   },
   components: {

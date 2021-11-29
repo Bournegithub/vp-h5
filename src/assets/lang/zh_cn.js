@@ -16,6 +16,7 @@ const menu = {
   table: '表格',
   directive: '自定义指令',
   api401: '接口返回401',
+  uploader: '上传',
 };
 
 const columns = {

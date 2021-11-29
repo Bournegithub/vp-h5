@@ -12,6 +12,7 @@ import Mixin from '@views/example/mixin.vue';
 import Table from '@views/example/table.vue';
 import Directive from '@views/example/directive.vue';
 import Api401 from '@views/example/api401.vue';
+import Uploader from '@views/example/uploader.vue';
 
 const routes = [
   {
@@ -102,6 +103,14 @@ const routes = [
           requireAuth: true,
         },
       },
+      {
+        path: 'uploader',
+        name: 'uploader',
+        component: Uploader,
+        meta: {
+          requireAuth: true,
+        },
+      }
     ],
   },
   {
