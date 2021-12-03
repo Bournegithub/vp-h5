@@ -4,7 +4,7 @@ import router from '@router';
 import Cookies from 'js-cookie';
 // import store from '@/store';
 // import qs from 'qs';
-let envUrl = '/api';
+let envUrl = '/proxy';
 if (process.env.NODE_ENV === 'production') {
   envUrl = process.env.API_ROOT;
 }
