@@ -17,6 +17,7 @@ const menu = {
   directive: 'Directive',
   api401: 'API 401',
   uploader: 'Uploader',
+  download: 'Download',
 };
 
 const columns = {

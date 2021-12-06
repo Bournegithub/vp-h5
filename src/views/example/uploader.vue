@@ -9,6 +9,7 @@
           class="file-item"
         >
           <div>{{ item.name }}</div>
+          <div>{{ item.content ? item.content : ''}}</div>
         </div>
       </div>
       <div class="">正常样式</div>

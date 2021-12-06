@@ -13,6 +13,7 @@ import Table from '@views/example/table.vue';
 import Directive from '@views/example/directive.vue';
 import Api401 from '@views/example/api401.vue';
 import Uploader from '@views/example/uploader.vue';
+import Download from '@views/example/download.vue';
 
 const routes = [
   {
@@ -107,6 +108,14 @@ const routes = [
         path: 'uploader',
         name: 'uploader',
         component: Uploader,
+        meta: {
+          requireAuth: true,
+        },
+      },
+      {
+        path: 'download',
+        name: 'download',
+        component: Download,
         meta: {
           requireAuth: true,
         },

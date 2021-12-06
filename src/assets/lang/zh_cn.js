@@ -17,6 +17,7 @@ const menu = {
   directive: '自定义指令',
   api401: '接口返回401',
   uploader: '上传',
+  download: '下载',
 };
 
 const columns = {
