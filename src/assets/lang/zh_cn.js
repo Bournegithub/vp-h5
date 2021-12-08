@@ -18,6 +18,7 @@ const menu = {
   api401: '接口返回401',
   uploader: '上传',
   download: '下载',
+  setUp: 'setup 示例',
 };
 
 const columns = {

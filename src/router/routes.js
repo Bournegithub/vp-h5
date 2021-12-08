@@ -14,6 +14,7 @@ import Directive from '@views/example/directive.vue';
 import Api401 from '@views/example/api401.vue';
 import Uploader from '@views/example/uploader.vue';
 import Download from '@views/example/download.vue';
+import SetUp from '@views/example/setUp.vue';
 
 const routes = [
   {
@@ -119,7 +120,15 @@ const routes = [
         meta: {
           requireAuth: true,
         },
-      }
+      },
+      {
+        path: 'setUp',
+        name: 'setUp',
+        component: SetUp,
+        meta: {
+          requireAuth: true,
+        },
+      },
     ],
   },
   {
