@@ -3,28 +3,11 @@
     <van-uploader
       v-if="slotUsing"
       v-model="fileList"
-      :accept="accept"
-      :name="name"
-      :preview-size="previewSize"
-      :preview-image="previewImage"
-      :preview-full-image="previewFullImage"
-      :preview-options="previewOptions"
-      :multiple="multiple"
-      :disabled="disabled"
-      :readonly="readonly"
-      :deletable="deletable"
-      :show-upload="showUpload"
-      :lazy-load="lazyLoad"
+      v-bind="$attrs"
       :capture="capture"
       :after-read="afterRead"
       :before-read="beforeRead"
       :before-delete="beforeDelete"
-      :max-size="maxSize"
-      :max-count="maxCount"
-      :result-type="resultType"
-      :upload-text="uploadText"
-      :image-fit="imageFit"
-      :upload-icon="uploadIcon"
       @oversize="overSize"
       @click-upload="clickUpload"
       @click-preview="clickPreview"
@@ -36,28 +19,10 @@
     <van-uploader
       v-else
       v-model="fileList"
-      :accept="accept"
-      :name="name"
-      :preview-size="previewSize"
-      :preview-image="previewImage"
-      :preview-full-image="previewFullImage"
-      :preview-options="previewOptions"
-      :multiple="multiple"
-      :disabled="disabled"
-      :readonly="readonly"
-      :deletable="deletable"
-      :show-upload="showUpload"
-      :lazy-load="lazyLoad"
-      :capture="capture"
+      v-bind="$attrs"
       :after-read="afterRead"
       :before-read="beforeRead"
       :before-delete="beforeDelete"
-      :max-size="maxSize"
-      :max-count="maxCount"
-      :result-type="resultType"
-      :upload-text="uploadText"
-      :image-fit="imageFit"
-      :upload-icon="uploadIcon"
       @oversize="overSize"
       @click-upload="clickUpload"
       @click-preview="clickPreview"
@@ -68,7 +33,7 @@
 </template>
 
 <script>
-import { ref, reactive, watch, getCurrentInstance, computed, onBeforeMount } from 'vue';
+import { ref, watch, getCurrentInstance, computed, onBeforeMount } from 'vue';
 import { globalApi } from '@service';
 import { thousandth } from '@utils/number-formatter';
 
@@ -81,80 +46,80 @@ export default {
       type: String,
       default: '',
     },
-    accept: {
-      type: String,
-      default: '*',
-    },
-    name: {
-      type: [Number, String],
-      default: '',
-    },
-    previewSize: {
-      type: [Number, String],
-      default: '80px',
-    },
-    previewImage: {
-      type: Boolean,
-      default: true,
-    },
-    previewFullImage: {
-      type: Boolean,
-      default: true,
-    },
-    previewOptions: {
-      type: Object,
-      default: () => {},
-    },
-    multiple: {
-      type: Boolean,
-      default: false,
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    readonly: {
-      type: Boolean,
-      default: false,
-    },
-    deletable: {
-      type: Boolean,
-      default: true,
-    },
-    showUpload: {
-      type: Boolean,
-      default: true,
-    },
-    lazyLoad: {
-      type: Boolean,
-      default: false,
-    },
-    capture: {
-      type: String,
-      default: '',
-    },
-    maxSize: {
-      type: [Number, String, Function],
-      default: 'Infinity',
-    },
-    maxCount: {
-      type: [Number, String],
-      default: 'Infinity',
-    },
-    resultType: {
-      type: String,
-    },
-    uploadText: {
-      type: String,
-    },
-    imageFit: {
-      type: String,
-      default: 'cover',
-    },
-    uploadIcon: {
-      type: String,
-      default: 'photograph',
-    },
+    // accept: {
+    //   type: String,
+    //   default: '*',
+    // },
+    // name: {
+    //   type: [Number, String],
+    //   default: '',
+    // },
+    // previewSize: {
+    //   type: [Number, String],
+    //   default: '80px',
+    // },
+    // previewImage: {
+    //   type: Boolean,
+    //   default: true,
+    // },
+    // previewFullImage: {
+    //   type: Boolean,
+    //   default: true,
+    // },
+    // previewOptions: {
+    //   type: Object,
+    //   default: () => {},
+    // },
+    // multiple: {
+    //   type: Boolean,
+    //   default: false,
+    // },
+    // disabled: {
+    //   type: Boolean,
+    //   default: false,
+    // },
+    // readonly: {
+    //   type: Boolean,
+    //   default: false,
+    // },
+    // deletable: {
+    //   type: Boolean,
+    //   default: true,
+    // },
+    // showUpload: {
+    //   type: Boolean,
+    //   default: true,
+    // },
+    // lazyLoad: {
+    //   type: Boolean,
+    //   default: false,
+    // },
+    // capture: {
+    //   type: String,
+    //   default: '',
+    // },
+    // maxSize: {
+    //   type: [Number, String, Function],
+    //   default: 'Infinity',
+    // },
+    // maxCount: {
+    //   type: [Number, String],
+    //   default: 'Infinity',
+    // },
+    // resultType: {
+    //   type: String,
+    // },
+    // uploadText: {
+    //   type: String,
+    // },
+    // imageFit: {
+    //   type: String,
+    //   default: 'cover',
+    // },
+    // uploadIcon: {
+    //   type: String,
+    //   default: 'photograph',
+    // },
   },
   setup(props, context) {
     // 因为<slot v-if="slotUsing"></slot>不能正常渲染，所以采用了两个uploader
