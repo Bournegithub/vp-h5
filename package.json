@@ -10,6 +10,7 @@
     "amfe-flexible": "2.2.1",
     "axios": "0.24.0",
     "echarts": "5.2.2",
+    "file-saver": "2.0.5",
     "js-cookie": "2.2.1",
     "numeral": "2.0.6",
     "postcss-pxtorem": "6.0.0",

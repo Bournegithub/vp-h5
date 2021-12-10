@@ -12,6 +12,9 @@ import Mixin from '@views/example/mixin.vue';
 import Table from '@views/example/table.vue';
 import Directive from '@views/example/directive.vue';
 import Api401 from '@views/example/api401.vue';
+import Uploader from '@views/example/uploader.vue';
+import Download from '@views/example/download.vue';
+import SetUp from '@views/example/setUp.vue';
 
 const routes = [
   {
@@ -98,6 +101,30 @@ const routes = [
         path: 'api401',
         name: 'api401',
         component: Api401,
+        meta: {
+          requireAuth: true,
+        },
+      },
+      {
+        path: 'uploader',
+        name: 'uploader',
+        component: Uploader,
+        meta: {
+          requireAuth: true,
+        },
+      },
+      {
+        path: 'download',
+        name: 'download',
+        component: Download,
+        meta: {
+          requireAuth: true,
+        },
+      },
+      {
+        path: 'setUp',
+        name: 'setUp',
+        component: SetUp,
         meta: {
           requireAuth: true,
         },

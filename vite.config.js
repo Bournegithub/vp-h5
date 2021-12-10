@@ -62,10 +62,10 @@ export default ((mode) => {
       open: true,
       // https: true,
       proxy: {
-        '/api': {
+        '/proxy': {
           target: 'https://www.fastmock.site/mock/665fb89a1b706542f160498c5da0e134',
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, '')
+          rewrite: (path) => path.replace(/^\/proxy/, '')
         }
       },
     },

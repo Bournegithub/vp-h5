@@ -27,5 +27,21 @@ export default {
       onClickRight,
     };
   },
+  // data () {
+  //   return {
+  //     pathName: '',
+  //   };
+  // },
+  // created () {
+  //   this.pathName = this.$route.name;
+  // },
+  // methods: {
+  //   onClickLeft () {
+  //     this.$router.go(-1);
+  //   },
+  //   onClickRight () {
+  //     Toast('按钮');
+  //   },
+  // },
 }
 </script>
