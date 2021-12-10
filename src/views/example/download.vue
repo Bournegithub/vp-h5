@@ -1,5 +1,6 @@
 <template>
   <div class="example-download-page">
+    <NavBar />
     <div class="download-content">
       <van-button @click="fileDownload">下载测试</van-button>
     </div>
@@ -8,6 +9,7 @@
 
 <script>
 import download from '@utils/download';
+import NavBar from '@components/NavBar.vue';
 
 export default {
   setup() {
@@ -39,5 +41,8 @@ export default {
       fileDownload,
     };
   },
+  components: {
+    NavBar,
+  }
 }
 </script>

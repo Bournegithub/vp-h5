@@ -1,12 +1,26 @@
 <template>
-  <router-view />
+  <router-view v-if="isRouterAlive"/>
 </template>
 
 <script>
 export default {
-  setup() {
+  provide () {
     return {
+      reload: this.reload,
+    }
+  },
+  data () {
+    return {
+      isRouterAlive: true,
     };
+  },
+  methods: {
+    reload () {
+      this.isRouterAlive = false;
+      this.$nextTick(() => {
+        this.isRouterAlive = true;
+      });
+    },
   },
 }
 </script>

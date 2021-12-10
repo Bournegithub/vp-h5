@@ -43,6 +43,12 @@ export default {
   components: {
     BottomBar,
   },
+  inject: ['reload'],
+  watch: {
+    '$route'() {
+      this.reload();
+    }
+  },
 }
 </script>
 

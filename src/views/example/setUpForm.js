@@ -8,7 +8,7 @@ const setUpForm = () => {
   const cityRules = [
     {
       required: true,
-      message: '验证码不能为空',
+      message: '城市不能为空',
       trigger: 'onBlur'
     }
   ];
@@ -37,17 +37,20 @@ const setUpForm = () => {
   const cityOnConfirm = (val) => {
     city.value = val.key;
     cityObj.value = val;
+    setTimeout(() => {
+      console.log('settimeout', city.value);
+    }, 1000);
   };
   // form
-  // const onFailed = (errorInfo) => {
-  //   console.log('failed', errorInfo);
-  // };
-  // const onSubmit = (values) => {
-  //   console.log('city', city.value);
-  //   console.log('cityObj', cityObj.value);
-  //   console.log('submit', values);
-  //   return values;
-  // };
+  const onFailed = (errorInfo) => {
+    console.log('failed', errorInfo);
+  };
+  const onSubmit = (values) => {
+    console.log('city', city.value);
+    console.log('cityObj', cityObj.value);
+    console.log('submit', values);
+    return values;
+  };
   return {
     city,
     cityObj,
@@ -57,8 +60,8 @@ const setUpForm = () => {
     cityPickerClick,
     cityColumns,
     cityOnConfirm,
-    // onFailed,
-    // onSubmit,
+    onFailed,
+    onSubmit,
   };
 };
 

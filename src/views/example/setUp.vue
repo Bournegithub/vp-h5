@@ -16,11 +16,11 @@
             :rules="cityRules"
             @click="cityPickerClick"
           />
-            <pop-picker
-              v-model="showCityPicker"
-              :columns="cityColumns"
-              @confirm="cityOnConfirm"
-            />
+          <pop-picker
+            v-model="showCityPicker"
+            :columns="cityColumns"
+            @confirm="cityOnConfirm"
+          />
         </van-cell-group>
         <div class="form-btn-wrap">
           <van-button round block type="primary" native-type="submit">
@@ -99,16 +99,7 @@ import setUpForm from './setUpForm.js';
 
 export default {
   setup() {
-    const { city, cityObj, cityRules, cityFormatter, showCityPicker, cityPickerClick, cityColumns, cityOnConfirm } = setUpForm();
-    const onFailed = (errorInfo) => {
-      console.log('failed', errorInfo);
-    };
-    const onSubmit = (values) => {
-      console.log('city', city.value);
-      console.log('cityObj', cityObj.value);
-      console.log('submit', values);
-      return values;
-    };
+    const { city, cityObj, cityRules, cityFormatter, showCityPicker, cityPickerClick, cityColumns, cityOnConfirm, onFailed, onSubmit } = setUpForm();
     return {
       city,
       cityObj,
