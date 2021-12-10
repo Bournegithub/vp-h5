@@ -1,4 +1,4 @@
-import { ConfigProvider, Icon, Button, Cell, CellGroup, Grid, GridItem, NavBar, Toast, Switch, Popover, Form, Field, Uploader } from 'vant';
+import { ConfigProvider, Icon, Button, Cell, CellGroup, Grid, GridItem, NavBar, Toast, Switch, Popover, Form, Field, Uploader, Picker, Popup } from 'vant';
 
 // 通过 ConfigProvider 可以覆盖vant默认样式 需要在根节点包裹一个 ConfigProvider 组件，并通过 theme-vars 属性来配置一些主题变量。示例见vant@3x文档
 // Vant 中的 CSS 变量分为 基础变量 和 组件变量。组件变量会继承基础变量，因此在修改基础变量后，会影响所有相关的组件
@@ -20,4 +20,6 @@ export default function vant (app) {
   app.use(Form);
   app.use(Field);
   app.use(Uploader);
+  app.use(Picker);
+  app.use(Popup);
 };
