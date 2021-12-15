@@ -19,6 +19,7 @@ const menu = {
   uploader: 'Uploader',
   download: 'Download',
   setUp: 'setup Example',
+  bus: 'Event bus',
 };
 
 const columns = {

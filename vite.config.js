@@ -71,6 +71,7 @@ export default ((mode) => {
     },
     resolve: {
       alias: {
+        'vue': 'vue/dist/vue.esm-bundler.js', // 解决实例内注册局部组件template报错问题
         '@': path.resolve(__dirname, './src'),
         '@assets': path.resolve(__dirname, './src/assets'),
         '@common': path.resolve(__dirname, './src/common'),

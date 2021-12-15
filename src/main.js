@@ -21,6 +21,7 @@ import App from './App.vue';
 import router from '@router/index';
 import store from '@store/index';
 import vantImport from '@utils/vantImport';
+import Bus from '@utils/bus';
 import i18n from '@locale/index';
 import globalMixin from '@mixins/index';
 import directive, { hasPermission } from '@directive/index';
@@ -56,5 +57,6 @@ app.mixin(globalMixin); // 全局混入， 将作为全局过滤器使用的计�
 app.component('v-chart', ECharts);
 app.config.globalProperties.$i18n = i18n; // i18n挂载到全局
 app.config.globalProperties.$hasPermission = hasPermission; // hasPermission挂载到全局
+app.config.globalProperties.$bus = Bus; // 事件总线挂载到全局
 // console.log('app.config', app.config);
 app.mount('#app');

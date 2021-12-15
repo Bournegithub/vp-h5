@@ -15,6 +15,7 @@ import Api401 from '@views/example/api401.vue';
 import Uploader from '@views/example/uploader.vue';
 import Download from '@views/example/download.vue';
 import SetUp from '@views/example/setUp.vue';
+import Bus from '@views/example/bus.vue';
 
 const routes = [
   {
@@ -125,6 +126,14 @@ const routes = [
         path: 'setUp',
         name: 'setUp',
         component: SetUp,
+        meta: {
+          requireAuth: true,
+        },
+      },
+      {
+        path: 'bus',
+        name: 'bus',
+        component: Bus,
         meta: {
           requireAuth: true,
         },

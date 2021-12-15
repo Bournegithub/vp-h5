@@ -1,6 +1,6 @@
 # vp-h5
 基于vue的h5项目模板（vue3/vite）
-基于vue3+Vite+Vant搭建一套通用的移动端模板；按照常见业务场景，给出常见功能使用示例: http封装(请求/响应拦截、api列表)/路由/权限/rem/国际化/自定义图标字体/模块化store/图表(vue-echarts)/模拟过滤器(3.x过滤器被删除，不再受支持)/全局混入/全局自定义指令/上传/下载以及相关组件的封装，setup示例等等
+基于vue3+Vite+Vant搭建一套通用的移动端模板；按照常见业务场景，给出常见功能使用示例: http封装(请求/响应拦截、api列表)/路由/权限/rem/国际化/自定义图标字体/模块化store/图表(vue-echarts)/模拟过滤器(3.x过滤器被删除，不再受支持)/全局混入/全局自定义指令/事件总线/上传/下载以及相关组件的封装，setup示例等等
 
 ### 背景
 h5项目的一个起手模板，方便迅速开发。UI框架使用Vant。
@@ -11,19 +11,20 @@ h5项目的一个起手模板，方便迅速开发。UI框架使用Vant。
   npm install -g v-project-cli <br/>
   安装完成后使用 vp init my-project命令 选择h5拉取代码<br/>
 
-  http ok<br/>
-  路由 ok<br/>
-  权限 ok<br/>
-  rem ok<br/>
+  http ok <br/>
+  路由 ok <br/>
+  权限 ok <br/>
+  rem ok <br/>
   国际化 ok <br/>
   iconfont ok <br/>
-  store ok<br/>
-  图表 (暂时使用vue-echarts) ok<br/>
+  store ok <br/>
+  图表 (暂时使用vue-echarts) ok <br/>
   filter ok(3.x过滤器被删除，不再受支持。官方建议用函数调用或计算属性替换它们，本模板内使用计算属性模拟全局filter)<br/>
-  mixin ok<br/>
-  directives ok<br/>
-  upload half<br/>
-  download half<br/>
+  mixin ok <br/>
+  directives ok <br/>
+  事件总线(mitt) ok <br/>
+  upload half <br/>
+  download half <br/>
 
 ### 部分目录
 * http: axios请求拦截,响应拦截

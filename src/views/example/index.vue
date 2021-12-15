@@ -57,5 +57,9 @@ export default {
     width: 100%;
     height: 100%;
     position: relative;
+    > .van-cell-group {
+      height: calc(~"100% - 86px");
+      overflow-y: auto;
+    }
   }
 </style>

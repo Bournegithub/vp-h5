@@ -19,6 +19,7 @@ const menu = {
   uploader: '上传',
   download: '下载',
   setUp: 'setup 示例',
+  bus: '事件总线',
 };
 
 const columns = {
