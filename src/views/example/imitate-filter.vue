@@ -3,7 +3,7 @@
     <NavBar />
     <div class="filter-content">
       <div>
-        <van-field v-model="number" placeholder="请输入带小数的数字" />
+        <van-field v-model="number" type="number" placeholder="请输入数字" />
       </div>
       <div>computed模拟filter--filterThousandth({{ number }}): {{ filterThousandth(number) }}</div>
       <div class="">
