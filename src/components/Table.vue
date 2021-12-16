@@ -16,7 +16,6 @@
               :style="styleComputed(item.width)"
               @click="rankClick(item, index)"
             >
-              
               <span class="cloumn-name">{{ $t(`app.columns.${item.name}`) }}</span>
               <span
                 v-if="index !== 0 && item.isSort"
@@ -328,7 +327,7 @@ export default {
             &:first-child {
               z-index: 2;
               .th-div {
-                width: 90px;
+                min-width: 80px;
                 width: 100%;
                 max-width: 100%;
                 // padding-left: 8px;
@@ -380,7 +379,7 @@ export default {
             }
             &:first-child {
               // text-align: left;
-              width: 90px !important;
+              width: 80px;
               .td-div {
                 height: auto;
                 line-height: 27px;
