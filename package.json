@@ -1,9 +1,12 @@
 {
   "name": "vp-h5",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:sit": "vite build --mode sit",
+    "build:uat": "vite build --mode uat",
+    "build:prod": "vite build --mode prod",
     "serve": "vite preview"
   },
   "dependencies": {

@@ -27,6 +27,8 @@ h5项目的一个起手模板，方便迅速开发。UI框架使用Vant。
   download half <br/>
 
 ### 部分目录
+* assets
+  * lang: 语言文件
 * http: axios请求拦截,响应拦截
 * service: 接口列表
 * common: 公用函数
