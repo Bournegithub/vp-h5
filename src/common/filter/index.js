@@ -3,6 +3,9 @@ import { thousandth } from '@utils/number-formatter';
 
 const filterThousandth = function () {
   return (val) => {
+    if (val === '') {
+      return;
+    }
     return thousandth(val);
   }
 };

@@ -7,6 +7,7 @@ import { getInnerText, setInnerText, thousandth } from '@utils/number-formatter'
 // 模拟过滤器类型
 const filterType = {
   filterThousandth: (val) => thousandth(val),
+  // 后续添加
 };
 
 export const hasPermission = (field) => {
@@ -30,11 +31,30 @@ const directive = (app) => {
       }
     }
   });
+  // v-filter请加在最后一层dom节点上
   app.directive('filter', {
-    mounted (el, binding) {
+    mounted (el, binding, vnode) {
+      console.log('mounted-el', el);
+      console.log('mounted-binding', binding);
+      console.log('mounted-vnode', vnode);
       if (binding.value) {
         const text = getInnerText(el);
-        const result = filterType[binding.value](text);
+        let result = text;
+        if (text && text !== '') {
+          result = filterType[binding.value](text);
+        }
+        // const result = filterType[binding.value](text);
+        setInnerText(el, result);
+        return el;
+      }
+    },
+    updated (el, binding, vnode) {
+      if (vnode && vnode.children && vnode.children[0] && vnode.children[0].el) {
+        const text = vnode.children[0].el.nodeValue;
+        let result = text;
+        if (text && text !== '') {
+          result = filterType[binding.value](text);
+        }
         setInnerText(el, result);
         return el;
       }
