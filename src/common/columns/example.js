@@ -31,6 +31,7 @@ export const exampleColumns2 = [
     name: 'age',
     prop: 'age',
     width: 90,
+    isSort: true,
   },
   {
     name: 'sex',
@@ -41,6 +42,7 @@ export const exampleColumns2 = [
     name: 'name',
     prop: 'name',
     width: 90,
+    isSort: true,
   },
   {
     name: 'example',

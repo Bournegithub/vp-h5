@@ -18,12 +18,20 @@
             >
               
               <span class="cloumn-name">{{ $t(`app.columns.${item.name}`) }}</span>
-              <span class="icon-wrap">
-                <!--<van-icon v-if="index !== 0" class='iconfont' class-prefix='icon' :name='rankIcon(item.order)'></van-icon>-->
-                <svg v-if="index !== 0 && item.isSort" class="icon" aria-hidden="true">
-                  <!-- <use :xlink:href="rankIcon(item.order)"></use> -->
+              <span
+                v-if="index !== 0 && item.isSort"
+                class="icon-wrap"
+              >
+                <div
+                  class="arrow-box"
+                  :class="rankIcon(item.prop)"
+                >
+                  <div class="arrow top"></div>
+                  <div class="arrow bottom"></div>
+                </div>
+                <!-- <svg v-if="index !== 0 && item.isSort" class="icon" aria-hidden="true">
                   <use :xlink:href="rankIcon(item.prop)"></use>
-                </svg>
+                </svg> -->
               </span>
             </div>
           </th>
@@ -111,41 +119,21 @@ export default {
     },
     rankIcon () {
       return (prop) => {
-        let result = '#icon-Rank_None';
+        let result = '';
         if (prop === this.orderField) {
           if (this.order === 'asc') {
-            result = '#icon-Rank_Up';
+            result = 'up';
           }
           if (this.order === 'desc') {
-            result = '#icon-Rank_Down';
+            result = 'down';
           }
           if (this.order === '') {
-            result = '#icon-Rank_None';
+            result = '';
           }
         }
         return result;
       };
-      // return (order) => {
-      //   let result = '#icon-Rank_None';
-      //   if (order === 'asc') {
-      //     result = '#icon-Rank_Up';
-      //   }
-      //   if (order === 'desc') {
-      //     result = '#icon-Rank_Down';
-      //   }
-      //   return result;
-      // };
     },
-    // classComputed () {
-    //   return (lift) => {
-    //     console.log('lift', lift);
-    //     let result = '';
-    //     if (lift) {
-    //       result = 'red';
-    //     }
-    //     return result;
-    //   };
-    // },
     classComputed () {
       return (item, context, i) => {
         // 转驼峰
@@ -231,31 +219,10 @@ export default {
           this.orderField = '';
         }
       }
-      // this.columns.forEach((item) => {
-      //   if (item.prop !== obj.prop) {
-      //     item.order = '';
-      //   }
-      // });
-      // this.orderField = obj.prop;
-      // const cacheOrder = obj.order;
-      // if (cacheOrder === '') {
-      //   obj.order = 'asc';
-      // }
-      // if (cacheOrder === 'asc') {
-      //   obj.order = 'desc';
-      // }
-      // if (cacheOrder === 'desc') {
-      //   obj.order = '';
-      // }
-      // console.log('obj.order', obj.order);
       const order = {
         orderField: this.orderField,
         order: this.order,
       };
-      // const order = {
-      //   orderField: obj.order === '' ? '' : obj.prop,
-      //   order: obj.order,
-      // };
       this.$emit('setOrder', order);
     },
     clearRankIcon () {
@@ -283,6 +250,44 @@ export default {
     font-size: 14px;
     width: 150px;
     padding: 12px;
+  }
+  .icon-wrap {
+    .arrow-box {
+      margin-left: 4px;
+      .arrow {
+        font-size: 0;
+        line-height: 0;
+        border-width: 4px;
+        border-style: dashed;
+        border-bottom-style: solid;
+        border-color: #C4C4C4;
+        border-left-color: transparent;
+        border-right-color: transparent;
+      }
+      .top {
+        border-top-width: 0;
+      }
+      .bottom {
+        margin-top: 1px;
+        border-bottom-width: 0;
+      }
+      &.up {
+        .top {
+          border-top-width: 0;
+          border-color: #7D7D7D;
+          border-left-color: transparent;
+          border-right-color: transparent;
+        }
+      }
+      &.down {
+        .bottom {
+          border-bottom-width: 0;
+          border-color: #7D7D7D;
+          border-left-color: transparent;
+          border-right-color: transparent;
+        }
+      }
+    }
   }
   .vant-table {
     width: 100%;
