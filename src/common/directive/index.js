@@ -34,9 +34,6 @@ const directive = (app) => {
   // v-filter请加在最后一层dom节点上
   app.directive('filter', {
     mounted (el, binding, vnode) {
-      console.log('mounted-el', el);
-      console.log('mounted-binding', binding);
-      console.log('mounted-vnode', vnode);
       if (binding.value) {
         const text = getInnerText(el);
         let result = text;
