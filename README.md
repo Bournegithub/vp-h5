@@ -19,7 +19,7 @@ h5项目的一个起手模板，方便迅速开发。UI框架使用Vant。
   iconfont ok <br/>
   store ok <br/>
   图表 (暂时使用vue-echarts) ok <br/>
-  filter ok(3.x过滤器被删除，不再受支持。官方建议用函数调用或计算属性替换它们，本模板内使用计算属性模拟全局filter)<br/>
+  filter ok(3.x过滤器被删除，不再受支持。官方建议用函数调用或计算属性替换它们，本模板内使用 混入计算属性/自定义全局fiter指令 模拟全局filter)<br/>
   mixin ok <br/>
   directives ok <br/>
   事件总线(mitt) ok <br/>
@@ -41,5 +41,5 @@ h5项目的一个起手模板，方便迅速开发。UI框架使用Vant。
 
 ### 注意事项
 package.json锁定版本 <br/>
-less中无法正确计算calc的问题 解决方法：在表达式前添加"~" height: calc(~"100% - 50px");
+less中无法正确计算calc的问题 解决方法：在表达式前添加"~" height: calc(~"100% - 50px"); <br/>
 用自定义指令模拟的v-filter过滤指令,需绑定在离过滤内容最近的DOM上
