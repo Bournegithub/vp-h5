@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { onMounted, ref, reactive } from 'vue';
+import { onMounted, ref, reactive, getCurrentInstance } from 'vue';
 import { exampleColumns1, exampleColumns2 } from '@columns/example.js';
 import NavBar from '@components/NavBar.vue';
 import Table from '@components/Table.vue';
@@ -59,8 +59,10 @@ export default {
       }
       tableData1.value = list;
     };
+    const { proxy } = getCurrentInstance();
     const setOrder = (val) => {
       tableOrder.value = val;
+      proxy.$toast(`orderField: ${tableOrder.value.orderField}, order: ${tableOrder.value.order}`);
     };
     onMounted (() => {
       initData();
