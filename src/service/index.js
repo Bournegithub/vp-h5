@@ -10,4 +10,6 @@ export const globalApi = {
   testFail: params => http.get(`/api/v1/testFail`, params),
   // 上传
   upload: (url, params) => http.upload(url, params),
+  // 下载
+  testDownlod: (url, params) =>  http.download(url, params),
 };

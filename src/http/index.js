@@ -1,4 +1,5 @@
 import request from './request.js';
+import download from '@utils/download.js';
 
 const http = {
   get (url, params) {
@@ -65,7 +66,14 @@ const http = {
       responseType: 'blob',
     };
     if (params) config.params = params;
-    return request(config);
+    // return request(config);
+    request(config).then((res) => {
+      if (res) {
+        download(res);
+      }
+    }).catch(() => {
+      
+    }).finally(() => {});
   },
 };
 
