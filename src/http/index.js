@@ -55,18 +55,18 @@ const http = {
     };
     return request(config);
   },
-  // download (url, params) {
-  //   const config = {
-  //     method: 'post',
-  //     url:url,
-  //     headers: {
-  //       'Content-Type':'application/json; charset=utf-8'
-  //     },
-  //     responseType: 'blob',
-  //   };
-  //   if (params) config.params = params;
-  //   return request(config);
-  // },
+  download (url, params) {
+    const config = {
+      method: 'get',
+      url:url,
+      headers: {
+        'Content-Type':'application/json; charset=utf-8'
+      },
+      responseType: 'blob',
+    };
+    if (params) config.params = params;
+    return request(config);
+  },
 };
 
 export default http;
