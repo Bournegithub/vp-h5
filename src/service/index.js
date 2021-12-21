@@ -11,5 +11,5 @@ export const globalApi = {
   // 上传
   upload: (url, params) => http.upload(url, params),
   // 下载
-  testDownlod: (url, params) =>  http.download(url, params),
+  testDownload: (url, params) =>  http.download(url, params),
 };

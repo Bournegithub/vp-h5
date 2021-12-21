@@ -29,8 +29,8 @@ service.interceptors.request.use((config) => {
 
 // 3.响应拦截器
 service.interceptors.response.use((response) => {
-  console.log('request-response', response);
-  let result = null;
+  // console.log('request-response', response);
+  // console.log('typeof response.data', typeof response.data);
   if (response.data.code === 401) {
     // 清除cookie以及store状态
     Cookies.remove('token');
@@ -39,13 +39,16 @@ service.interceptors.response.use((response) => {
     router.replace({ name: 'login' });
     return Promise.reject(response.data.message);
   }
-  if (response.data.code !== 200) {
+  if (response.data.code !== 200 && response.config.responseType !== 'blob') {
     Toast.fail(response.data.message);
     return Promise.reject(response.data.message);
   }
-  result = response.data.data;
-  console.log('result', result);
-  return result;
+  let result = response.data.data;
+  if (response.config.responseType === 'blob') {
+    result = response.data;
+  }
+  // console.log('result', result);
+  return Promise.resolve(result);
 }, (error) => {
   // console.log('response', error);
   if (error && error.response) {

@@ -61,19 +61,22 @@ const http = {
       method: 'get',
       url:url,
       headers: {
-        'Content-Type':'application/json; charset=utf-8'
+        // 'Content-Type':'application/json; charset=utf-8',
+        'Content-Type':'application/octet-stream; charset=utf-8'
       },
       responseType: 'blob',
     };
     if (params) config.params = params;
     // return request(config);
-    request(config).then((res) => {
-      if (res) {
-        download(res);
-      }
-    }).catch(() => {
-      
-    }).finally(() => {});
+    // 此处套一个promise函数，是为了外层继续保持调用时then\catch写法，保持所有请求方法保持统一, 也为了外层可以拿到下载成功提示，当然也可以全部封装在这里
+    return new Promise((resolve, reject) => {
+      request(config).then((res) => {
+        download(res, params.fileName);
+        resolve('download success');
+      }).catch((err) => {
+        reject(err);
+      }).finally(() => {});
+    });
   },
 };
 
