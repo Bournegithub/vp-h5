@@ -60,6 +60,7 @@ export default ((mode) => {
     },
     server: {
       open: true,
+      host: '0.0.0.0',
       // https: true,
       proxy: {
         '/proxy': {
